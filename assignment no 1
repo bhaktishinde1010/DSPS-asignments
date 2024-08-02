@@ -13,14 +13,15 @@ public:
         cout << "Enter " << n << " elements:\n ";
         for(int i = 0; i < n; i++)
         {
-            cout<<"enter Element:";
+            cout << "Enter element: ";
             cin >> a[i];
         }
-        cout<<"unsorted array:\n";
-        for(int i=0;i<n;i++)
+        cout << "Unsorted array:\n";
+        for(int i = 0; i < n; i++)
         {
-            cout<<a[i]<<"\t";
+            cout << a[i] << "\t";
         }
+        cout << endl;
     }
 
     void sort(int n)
@@ -39,28 +40,36 @@ public:
                 }
             }
         }
-        cout<<"\nsorted array:\n";
-        for(int i=0;i<n;i++)
+        cout << "Sorted array:\n";
+        for(int i = 0; i < n; i++)
         {
-            cout<<a[i]<<"\t";
+            cout << a[i] << "\t";
         }
+        cout << endl;
     }
 
     void search(int n, int target)
     {
         int found = 0;
+        int count = 0;
+        cout << "Element found at indices: ";
         for(int i = 0; i < n; i++)
         {
             if(target == a[i])
             {
-                cout << "\nElement found at index " << i ;
+                cout << i << " ";
+                count++;
                 found = 1;
-                break;
             }
         }
-        if(found!=1)
+        cout << endl;
+        if (found != 1)
         {
-            cout << "\nElement not found" << endl;
+            cout << "Element not found" << endl;
+        }
+        else
+        {
+            cout << "Element repeated " << count << " times" << endl;
         }
     }
 };
@@ -76,7 +85,7 @@ int main()
     s.accept(n);
     s.sort(n);
 
-    cout << "\nKey to search: ";
+    cout << "Key to search: ";
     cin >> target;
 
     s.search(n, target);
